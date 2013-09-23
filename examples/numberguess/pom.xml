@@ -3,7 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.seam.examples</groupId>
     <artifactId>numberguess</artifactId>
+<<<<<<< HEAD
     <version>2.3.2-SNAPSHOT</version>
+=======
+    <parent>
+        <groupId>org.jboss.seam</groupId>
+        <artifactId>examples</artifactId>
+        <version>2.3.1.Final</version>
+    </parent>
+>>>>>>> 2a808b67f062ad4c3bc0bfef6e10be9dcf8cd760
     <packaging>pom</packaging>
     <name>Numberguess Example (EE6)</name>
     

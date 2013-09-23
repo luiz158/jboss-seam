@@ -30,11 +30,18 @@ public class CategoryServiceDBUnitTest extends DBJUnitSeamTest
    @OverProtocol("Servlet 3.0")
    public static Archive<?> createDeployment()
    {
+<<<<<<< HEAD:examples/restbay/restbay-ejb/src/test/java/org/jboss/seam/example/restbay/test/CategoryServiceDBUnitTest.java
       WebArchive web = Deployments.restbayDeployment();
       web.addAsLibraries(Maven.resolver().loadPomFromFile("pom.xml")
     		  	.resolve("org.dbunit:dbunit:jar:2.2")
     		  	.withoutTransitivity()
                 .asFile());
+=======
+      EnterpriseArchive er = Deployments.restbayDeployment();
+      WebArchive web = er.getAsType(WebArchive.class, "restbay-web.war");
+      er.addAsLibraries(Maven.resolver().loadPomFromFile("pom.xml")
+      		.resolve("org.dbunit:dbunit:jar:2.2").withTransitivity().asFile());
+>>>>>>> 2a808b67f062ad4c3bc0bfef6e10be9dcf8cd760:examples/restbay/restbay-tests/src/test/java/org/jboss/seam/example/restbay/test/CategoryServiceDBUnitTest.java
       
       web.addAsResource("org/jboss/seam/example/restbay/test/dbunitdata.xml", "org/jboss/seam/example/restbay/test/dbunitdata.xml");
       
