@@ -45,11 +45,10 @@
 		<pdf.name>${project.artifactId}.pdf</pdf.name>
 
 		<!-- Version string properties -->
-<<<<<<< HEAD
         <version.seam>2.3.2-SNAPSHOT</version.seam>
 		<version.jbossas7>7.2.0.Final</version.jbossas7>
 		<version.emma>2.0.5312</version.emma>
-=======
+<!---
       <version.seam>2.3.1.Final</version.seam>
 		<version.arquillian_core>1.0.1.Final</version.arquillian_core>
 		<version.wicket>1.4.14</version.wicket>
@@ -60,7 +59,7 @@
 		<version.emma>2.0.5312</version.emma>
 		<version.jsf2>2.1.7</version.jsf2>
 		<version.junit>4.8.2</version.junit>
->>>>>>> 2a808b67f062ad4c3bc0bfef6e10be9dcf8cd760
+-->
 		<version.richfaces.cdk>4.2.2.Final</version.richfaces.cdk>
 
 		<!-- ***************** -->
