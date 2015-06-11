@@ -19,6 +19,12 @@
             <os family="mac"/>
         </or>
     </condition>
+    <condition property="isUnix">
+       <os family="unix" />
+    </condition>
+    <condition property="isWindows">
+       <os family="windows" />
+    </condition>
     <condition property="seam.cmd" value="${cmd.prefix}seam" else="ant">
         <equals arg1="${seam-gen.properties}" arg2="${seam-gen.dir}/build.properties"/>
     </condition>
@@ -219,12 +225,23 @@
     </target>
 
     <target name="setup-librarylist" 
-        depends="setup-librarylist-ear,setup-librarylist-war">
+          depends="setup-librarylist-ear,setup-librarylist-war">
+       <condition property="regexp-library-delimiter" value=";" else=":">
+          <isset property="isWindows"/> 
+       </condition>
+
         <property name="library.list.inner" refid="library.fileset"/>
         <property name="indent" value="                          "/>
+        <!-- this changes all backspaces in paths to standard / -->
         <propertyregex property="library.list.inner"
                        override="true"
-                       regexp=":"
+                       regexp="\\"
+                       replace="/"
+                       input="${library.list.inner}"
+                       global="true"/>
+        <propertyregex property="library.list.inner"
+                       override="true"
+                       regexp="${regexp-library-delimiter}"
                        replace='"), ${line.separator} ${indent} new File(PROJECT_HOME + "'
                        input="${library.list.inner}"
                        global="true"/>

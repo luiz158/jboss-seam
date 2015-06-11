@@ -81,11 +81,11 @@ public class SellTest extends SeamBayFunctionalTestBase {
 
     protected void submitSell2Page(int category, int subcategory) {
         assertTrue("Navigation failure, sell2 page expected", browser.getCurrentUrl().contains(getProperty("SELL_2_URL")));
-        waitModel().until(element(getBy("SELL_CATEGORY_SELECT_SECOND_OPTION")).isPresent());
+        waitModel().until().element(getBy("SELL_CATEGORY_SELECT_SECOND_OPTION")).is().present();
         new Select(browser.findElement(getBy("SELL_CATEGORY_SELECT"))).selectByIndex(category);
 
         if (subcategory != 0) {
-            waitModel().until(element(getBy("SELL_SUBCATEGORY_SELECT")).isPresent());
+            waitModel().until().element(getBy("SELL_SUBCATEGORY_SELECT")).is().present();
             new Select(browser.findElement(getBy("SELL_SUBCATEGORY_SELECT"))).selectByIndex(subcategory);
         }
         clickAndWaitHttp(getBy("SELL_NEXT"));

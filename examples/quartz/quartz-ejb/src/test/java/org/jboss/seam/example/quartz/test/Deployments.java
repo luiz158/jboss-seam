@@ -28,7 +28,7 @@ public class Deployments {
                .addPackage(AsynchronousTest.class.getPackage())
                .addPackage(PaymentProcessor.class.getPackage())
                .addAsWebInfResource("META-INF/ejb-jar.xml", "ejb-jar.xml")
-               .addAsWebInfResource("components.xml")
+               .addAsWebInfResource("components-test.xml", "components.xml")
                .addAsResource("persistence.xml", "META-INF/persistence.xml")
                .addAsResource("import.sql")
                .addAsWebInfResource("jboss-deployment-structure.xml")

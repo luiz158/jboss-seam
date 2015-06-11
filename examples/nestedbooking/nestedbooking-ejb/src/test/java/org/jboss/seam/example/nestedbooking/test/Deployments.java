@@ -30,7 +30,7 @@ public class Deployments {
                 .addAsWebInfResource("jboss-deployment-structure.xml")
                 
                 // manually copied from WAR
-                .addAsWebInfResource("components.xml")
+                .addAsWebInfResource("components-test.xml", "components.xml")
                 .addAsLibraries(libs);
     }
 }

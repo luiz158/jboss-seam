@@ -11,7 +11,6 @@ import org.jboss.seam.document.DocumentStore;
 import org.jboss.seam.mock.JUnitSeamTest;
 import org.jboss.seam.pdf.ui.UIDocument;
 import org.jboss.shrinkwrap.api.Archive;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

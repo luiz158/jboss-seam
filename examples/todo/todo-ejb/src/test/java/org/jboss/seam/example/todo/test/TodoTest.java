@@ -36,7 +36,7 @@ public class TodoTest extends JUnitSeamTest
 
         return ShrinkWrap.create(WebArchive.class, "seam-todo.war")
                 .addPackage(Login.class.getPackage())
-                .addAsWebInfResource("components.xml")
+                .addAsWebInfResource("components-test.xml","components.xml")
                 .addAsWebInfResource("jboss-deployment-structure.xml")
                 .addAsResource("seam.properties")
                 .addAsWebInfResource("web.xml")

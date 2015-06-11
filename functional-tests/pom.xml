@@ -14,10 +14,6 @@
     <artifactId>functional-tests</artifactId>
     <name>Seam Functional Tests Common Classes</name>
 
-    <properties>
-        <version.graphene>2.0.0.Alpha4</version.graphene>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -32,7 +28,6 @@
         <dependency>
             <groupId>org.jboss.arquillian.graphene</groupId>
             <artifactId>graphene-webdriver</artifactId>
-            <version>${version.graphene}</version>
             <type>pom</type>
         </dependency>
 

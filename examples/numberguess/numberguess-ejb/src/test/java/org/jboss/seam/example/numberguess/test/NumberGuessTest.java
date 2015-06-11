@@ -33,7 +33,7 @@ public class NumberGuessTest extends JUnitSeamTest {
 
         return ShrinkWrap.create(WebArchive.class, "seam-numberguess.war")
                 .addPackage(NumberGuess.class.getPackage())
-                .addAsWebInfResource("components.xml")
+                .addAsWebInfResource("components-test.xml","components.xml")
                 .addAsWebInfResource("pages.xml")
                 .addAsWebInfResource("jboss-deployment-structure.xml")
                 .addAsResource("seam.properties")

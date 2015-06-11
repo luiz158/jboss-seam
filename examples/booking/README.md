@@ -33,6 +33,15 @@ To deploy the example to a running JBoss AS instance, follow these steps:
 
 3. Open this URL in a web browser: `http://localhost:8080/seam-booking`
 
+### Openshift Deployment support
+
+To deploy Booking example on openshift you can use prepared openshift profile like
+   
+    mvn clean install -Popenshift
+
+for creating deployments/seam-booking.ear and changing the web context root of application to be "/" to not append
+seam-booking string into web context root. 
+You only need to use it like this is in your Openshift git repository.
 
 Testing the example
 -------------------
@@ -90,7 +99,7 @@ Several variables can be configured:
 
 * the browser to use for testing
 
-        -DbrowserCapabilities=htmlUnit
+        -Dbrowser=htmlUnit
 
 * test on a running server
 

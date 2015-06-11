@@ -25,7 +25,7 @@ public class Deployments {
                 .addAsWebInfResource("import.sql", "classes/import.sql")
                 .addAsWebInfResource("seam.properties", "classes/seam.properties")
                 .addAsWebInfResource("persistence.xml", "classes/META-INF/persistence.xml")
-                .addAsWebInfResource("components.xml")
+                .addAsWebInfResource("components-test.xml", "components.xml")
                 
                 // copy files from src/main/webapp to test-archive's WEB-INF
                 .addAsWebInfResource(new File(webInf, "jboss-deployment-structure.xml"))

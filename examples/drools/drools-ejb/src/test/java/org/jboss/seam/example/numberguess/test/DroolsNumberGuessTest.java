@@ -39,7 +39,7 @@ public class DroolsNumberGuessTest extends JUnitSeamTest
 
       return ShrinkWrap.create(WebArchive.class, "seam-drools.war")
               .addPackage(Game.class.getPackage())
-              .addAsWebInfResource("components.xml", "components.xml")
+              .addAsWebInfResource("components-test.xml", "components.xml")
               .addAsWebInfResource("jboss-deployment-structure.xml", "jboss-deployment-structure.xml")
               .addAsWebInfResource("seam.properties", "classes/seam.properties")
               .addAsWebInfResource("web.xml", "web.xml")

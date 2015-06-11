@@ -33,7 +33,7 @@ public class Deployments {
 
                 // manually copied from Web module, modified
                 .addAsWebInfResource("web.xml") // only contains MockSeamListener definition
-                .addAsWebInfResource("components.xml") // corrected ejb component jndi-name references from java:app/jboss-seam to java:app/seam-restbay
+                .addAsWebInfResource("components-test.xml", "components.xml") // corrected ejb component jndi-name references from java:app/jboss-seam to java:app/seam-restbay
 
                 // manually copied from EAR module
                 .addAsWebInfResource("jboss-deployment-structure.xml")

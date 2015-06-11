@@ -25,8 +25,6 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.seam.example.seamdiscs.model.BandMember;
 import org.jboss.seam.mock.DBJUnitSeamTest;
 import org.jboss.shrinkwrap.api.Archive;
-import org.jboss.shrinkwrap.api.spec.EnterpriseArchive;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 
@@ -112,7 +110,7 @@ public class EditArtistTest extends DBJUnitSeamTest
             @Override
             protected void renderResponse() throws Exception 
             {
-                assert ARTIST_NEW_DESCRIPTION.equals(getValue("#{artist.description"));
+                assert ARTIST_NEW_DESCRIPTION.equals(getValue("#{artist.description}"));
                 assert isLongRunningConversation();
             }
             

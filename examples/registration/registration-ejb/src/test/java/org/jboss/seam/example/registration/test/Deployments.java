@@ -20,7 +20,7 @@ public class Deployments
       return ShrinkWrap.create(WebArchive.class, "seam-registration.war")
               .addPackage(RegisterAction.class.getPackage())
               .addAsWebInfResource("META-INF/ejb-jar.xml", "ejb-jar.xml")
-              .addAsWebInfResource("components.xml")
+              .addAsWebInfResource("components-test.xml", "components.xml")
               .addAsResource("persistence.xml", "META-INF/persistence.xml")
               .addAsWebInfResource("jboss-deployment-structure.xml")
               .addAsResource("seam.properties")

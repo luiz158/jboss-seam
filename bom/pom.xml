@@ -4,7 +4,7 @@
 	<groupId>org.jboss.seam</groupId>
 	<artifactId>bom</artifactId>
 	<name>Seam 2 Bill Of Materials </name>
-	<version>2.3.1.Final</version>
+	<version>2.3.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<licenses>
@@ -30,23 +30,18 @@
 	<url>http://seamframework.org/Seam2</url>
 
 	<properties>
-<<<<<<< HEAD
 		<!-- Version string properties for integrations-->
         <version.seam>2.3.2-SNAPSHOT</version.seam>
-=======
-		<!-- Version string properties -->
-        <version.seam>2.3.1.Final</version.seam>
->>>>>>> 2a808b67f062ad4c3bc0bfef6e10be9dcf8cd760
 		<version.wicket>1.4.14</version.wicket>
 		<version.drools>5.3.3.Final</version.drools>
-		<version.resteasy>2.0.1.GA</version.resteasy>
-		<version.spring>3.1.1.RELEASE</version.spring>
-        <version.richfaces>4.3.3.Final</version.richfaces>
+		<version.resteasy>2.3.4.Final</version.resteasy>
+		<version.spring>3.1.4.RELEASE</version.spring>
+        <version.richfaces>4.3.7.Final</version.richfaces>
 
         <!-- Version of Hibernate projects -->
         <version.org.hibernate>4.2.0.Final</version.org.hibernate>
-        <version.org.hibernate.validator>4.2.0.Final</version.org.hibernate.validator>
-        <version.org.hibernate.search>4.3.0.Final</version.org.hibernate.search>
+        <version.org.hibernate.validator>4.3.1.Final</version.org.hibernate.validator>
+        <version.org.hibernate.search>4.4.0.Final</version.org.hibernate.search>
         <version.org.hibernate.javax.persistence>1.0.1.Final</version.org.hibernate.javax.persistence>
         <version.org.hibernate-jpamodelgen>1.2.0.Final</version.org.hibernate-jpamodelgen>
         
@@ -54,26 +49,18 @@
 		<version.jbossas7>7.2.0.Final</version.jbossas7>		
         <version.org.jboss.spec.jboss.javaee.6.0>3.0.2.Final</version.org.jboss.spec.jboss.javaee.6.0>
 
-        <version.infinispan>5.2.4.Final</version.infinispan>
-<<<<<<< HEAD
-=======
-        <version.junit>4.10</version.junit>
-        <version.testng>5.14.10</version.testng>
-        <version.org.jboss.bom>1.0.7.CR8</version.org.jboss.bom>
-        <version.richfaces>4.3.3.Final</version.richfaces>        
->>>>>>> 2a808b67f062ad4c3bc0bfef6e10be9dcf8cd760
+        <version.infinispan>5.2.7.Final</version.infinispan>
 
         <!-- Test frameworks -->
-        <version.junit>4.10</version.junit>
+        <version.junit>4.11</version.junit>
         <version.org.testng>5.14.10</version.org.testng>
-        <version.webdriver>0.9.7376</version.webdriver>
         
         <!-- Versions of Arquillian and Shrinkwrap -->
-        <version.org.jboss.arquillian>1.1.0.Final</version.org.jboss.arquillian>
-        <version.org.jboss.arquillian.extension.drone>1.1.1.Final</version.org.jboss.arquillian.extension.drone>
-        <version.org.jboss.arquillian.graphene>1.0.0.Final</version.org.jboss.arquillian.graphene>
+        <version.org.jboss.arquillian>1.1.4.Final</version.org.jboss.arquillian>
+        <version.org.jboss.arquillian.extension.drone>1.3.1.Final</version.org.jboss.arquillian.extension.drone>
+        <version.org.jboss.arquillian.graphene>2.0.3.Final</version.org.jboss.arquillian.graphene>
         <version.org.jboss.as.arquillian.container>7.2.0.Final</version.org.jboss.as.arquillian.container>
-        <version.org.jboss.shrinkwrap.resolver>2.0.0</version.org.jboss.shrinkwrap.resolver>
+        <version.org.jboss.shrinkwrap.resolver>2.1.1</version.org.jboss.shrinkwrap.resolver>
             
 		<!-- ***************** -->
 		<!-- Repository Deployment URLs -->
@@ -85,7 +72,7 @@
 
 	<dependencyManagement>
 		<!-- Used to specify which version of a dependency to use - this means 
-			that versions are only specified here, not in sub project poms. All dependencies 
+		     			that versions are only specified here, not in sub project poms. All dependencies 
 			for all modules should be listed out here -->
 		<dependencies>
             <!-- Hibernate ORM sub-modules -->
@@ -213,7 +200,7 @@
             </dependency>
 
             <!-- Arquillian Drone adds support for visual testing of your 
-                application -->
+                                 application -->
             <dependency>
                 <groupId>org.jboss.arquillian.extension</groupId>
                 <artifactId>arquillian-drone-bom</artifactId>
@@ -239,17 +226,17 @@
             </dependency>
 
             <!-- Arquillian Graphene is an enhanced tool based on Selenium 
-                allowing you to test AJAX more easily -->
+                                 allowing you to test AJAX more easily -->
             <dependency>
                 <groupId>org.jboss.arquillian.graphene</groupId>
-                <artifactId>arquillian-graphene</artifactId>
+                <artifactId>graphene-webdriver</artifactId>
                 <version>${version.org.jboss.arquillian.graphene}</version>
                 <type>pom</type>
             </dependency>
 
             <!-- Arquillian support for JBoss AS7 container -->
             <!-- Note: Managed version of container allows Arquillian to 
-                control startup and shutdown of the container -->
+                                 control startup and shutdown of the container -->
             <dependency>
                 <groupId>org.jboss.as</groupId>
                 <artifactId>jboss-as-arquillian-container-managed</artifactId>
@@ -258,7 +245,7 @@
 
             <!-- Arquillian support for JBoss AS7 container -->
             <!-- Note: Remote version of container allows Arquillian to connect 
-                to already running container -->
+                                 to already running container -->
             <dependency>
                 <groupId>org.jboss.as</groupId>
                 <artifactId>jboss-as-arquillian-container-remote</artifactId>
@@ -657,7 +644,7 @@
 				<version>1.5.4</version>
 				<exclusions>
 					<!-- groovy-all imports a lot of stuff, would be better to just use 
-						specific bits -->
+					     						specific bits -->
 					<exclusion>
 						<groupId>bsf</groupId>
 						<artifactId>bsf</artifactId>
@@ -931,7 +918,7 @@
 			<dependency>
 				<groupId>com.lowagie</groupId>
 				<artifactId>itext</artifactId>
-				<version>2.1.2</version>
+				<version>2.1.7</version>
 				<exclusions>
 					<exclusion>
 						<groupId>junit</groupId>
@@ -952,7 +939,7 @@
 			<dependency>
 				<groupId>com.lowagie</groupId>
 				<artifactId>itext-rtf</artifactId>
-				<version>2.1.2</version>
+				<version>2.1.7</version>
 				<exclusions>
 					<exclusion>
 						<groupId>junit</groupId>

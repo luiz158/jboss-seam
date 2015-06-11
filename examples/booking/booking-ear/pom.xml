@@ -146,5 +146,39 @@
                 </plugins>
             </build>
         </profile>    
+        <profile>
+            <id>openshift</id>
+            <build>
+                <plugins>
+                    <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-ear-plugin</artifactId>
+                     <configuration>              
+                       <outputDirectory>deployments</outputDirectory>      
+                         <defaultLibBundleDir>lib</defaultLibBundleDir>
+                         <filtering>true</filtering>
+                         <modules>
+                             <webModule>
+                                 <groupId>org.jboss.seam.examples.booking</groupId>
+                                 <artifactId>booking-web</artifactId>
+                                 <contextRoot>/</contextRoot>
+                                 <bundleFileName>booking-web.war</bundleFileName>
+                             </webModule>
+                             <ejbModule>
+                                 <groupId>org.jboss.seam.examples.booking</groupId>
+                                 <artifactId>booking-ejb</artifactId>
+                                 <bundleFileName>booking-ejb.jar</bundleFileName>
+                             </ejbModule>
+                             <ejbModule>
+                                 <groupId>org.jboss.seam</groupId>
+                                 <artifactId>jboss-seam</artifactId>
+                                 <bundleFileName>jboss-seam.jar</bundleFileName>
+                             </ejbModule>                        
+                         </modules>
+                     </configuration>
+                 </plugin>
+                </plugins>
+          </build>
+        </profile> 
     </profiles>
 </project>

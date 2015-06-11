@@ -71,7 +71,7 @@ Several variables can be configured:
 
 * the browser to use for testing
 
-        -DbrowserCapabilities=htmlUnit
+        -Dbrowser=htmlUnit
 
 * test on a running server
 

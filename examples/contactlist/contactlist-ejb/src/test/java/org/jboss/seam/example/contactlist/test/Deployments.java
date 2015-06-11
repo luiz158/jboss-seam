@@ -20,7 +20,7 @@ public class Deployments {
               .addAsWebInfResource("META-INF/ejb-jar.xml", "ejb-jar.xml")
               .addAsWebInfResource("import.sql", "classes/import.sql")
               .addAsWebInfResource("persistence.xml", "classes/META-INF/persistence.xml")
-              .addAsWebInfResource("components.xml", "components.xml")
+              .addAsWebInfResource("components-test.xml", "components.xml")
               .addAsWebInfResource("jboss-deployment-structure.xml", "jboss-deployment-structure.xml")
               .addAsWebInfResource("seam.properties", "classes/seam.properties")
               .addAsWebInfResource("web.xml", "web.xml")

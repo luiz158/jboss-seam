@@ -10,6 +10,7 @@
 	<condition property="compatible.ant">
 		<or>
 	    	<contains string="${ant.version}" substring="1.8"/>
+	    	<contains string="${ant.version}" substring="1.9"/>
 		</or>
 	</condition>	
 	<fail unless="compatible.ant">You are using ${ant.version}. You must use Ant 1.8.0 or higher to build Seam examples.</fail>
@@ -177,7 +178,7 @@
       <artifact:dependencies pathId="ear.module.classpath" 
             filesetId="ear.module.fileset" pomRefId="ear-pom"/>
       <artifact:dependencies filesetId="ejb.module.fileset" useScope="runtime"
-            pomRefId="ejb-pom"/>
+            pomRefId="ejb-pom" versionsId="dependency.versions"/>
 
       <copy todir="${ear.module.dir}/${target.ear.dir}">
          <fileset refid="ear.module.fileset"/>
@@ -211,10 +212,7 @@
                <rsel:name name="**/jboss-seam*.jar"/>
             </rsel:not>
          </restrict>
-     	<chainedmapper>
-     	   <flattenmapper/>
-           <mapper type="glob" from="jboss-el*.jar" to="jboss-el.jar"/>
-        </chainedmapper>
+         <mapper classpathref="build.lib.classpath" classname="org.apache.maven.artifact.ant.VersionMapper" from="${dependency.versions}" to="flatten" />
       </copy>
 
       <ear destfile="${ear.module.dir}/${target.dir}/seam-${project.name}.ear"

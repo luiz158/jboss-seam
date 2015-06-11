@@ -4,8 +4,8 @@ import com.google.common.base.Predicate;
 import java.net.MalformedURLException;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
-import static org.jboss.arquillian.graphene.Graphene.*;
 import org.jboss.arquillian.graphene.wait.WebDriverWait;
+import org.jboss.arquillian.graphene.wait.WebDriverWaitImpl;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.junit.InSequence;
 import org.jboss.seam.example.common.test.DeploymentResolver;
@@ -106,7 +106,7 @@ public class WebServicesTest extends SeamGrapheneTest {
 
         // the same as Selenium, must use getValue to retrieve text inside
         // <textarea></textarea>
-        waitCustom().withMessage("Response area should contain \"true\"").until(element(RESPONSE_AREA).attribute("value").contains(LOGIN_RIGHT_RESPONSE));
+        waitCustom().withMessage("Response area should contain \"true\"").until().element(RESPONSE_AREA).attribute("value").contains(LOGIN_RIGHT_RESPONSE);
     }
 
     @Test
@@ -116,7 +116,7 @@ public class WebServicesTest extends SeamGrapheneTest {
         clickAndWaitForPage(LIST_CATEGORIES_LINK_TEXT);
         clickAndWaitAjax(INVOKE_SERVICE_BUTTON);
         waitForCidUpdate();
-        waitCustom().withMessage("Response area should contain a list of categories.").until(element(RESPONSE_AREA).attribute("value").contains(LIST_CATEGORIES_RESPONSE));
+        waitCustom().withMessage("Response area should contain a list of categories.").until().element(RESPONSE_AREA).attribute("value").contains(LIST_CATEGORIES_RESPONSE);
     }
 
     @Test
@@ -127,8 +127,8 @@ public class WebServicesTest extends SeamGrapheneTest {
 
         waitCustom().withMessage("Response area should contain information about creating the auction.").until(new Predicate() {
             public boolean apply(Object t) {
-                return element(RESPONSE_AREA).attribute("value").contains(CREATE_NEW_AUCTION_RESPONSE_JBOSS_56).apply(browser)
-                        || element(RESPONSE_AREA).attribute("value").contains(CREATE_NEW_AUCTION_RESPONSE_JBOSS_4).apply(browser);
+                return browser.findElement(RESPONSE_AREA).getAttribute("value").contains(CREATE_NEW_AUCTION_RESPONSE_JBOSS_56)
+                        || browser.findElement(RESPONSE_AREA).getAttribute("value").contains(CREATE_NEW_AUCTION_RESPONSE_JBOSS_4);
             }
         });
     }
@@ -145,7 +145,7 @@ public class WebServicesTest extends SeamGrapheneTest {
         type(SEARCH_TERM, searchTerm);
         clickAndWaitAjax(INVOKE_SERVICE_BUTTON);
         waitForCidUpdate();
-        waitCustom().withMessage("Response area should contain information about finding auction.").until(element(RESPONSE_AREA).attribute("value").contains(FIND_AUCTIONS_RESPONSE));
+        waitCustom().withMessage("Response area should contain information about finding auction.").until().element(RESPONSE_AREA).attribute("value").contains(FIND_AUCTIONS_RESPONSE);
     }
 
     @Test
@@ -165,8 +165,8 @@ public class WebServicesTest extends SeamGrapheneTest {
         waitForCidUpdate();
         waitCustom().withMessage("Response area should contain information about updating the auction.").until(new Predicate() {
             public boolean apply(Object t) {
-                return element(RESPONSE_AREA).attribute("value").contains(UPDATE_AUCTION_RESPONSE_JBOSS_56).apply(browser)
-                        || element(RESPONSE_AREA).attribute("value").contains(UPDATE_AUCTION_RESPONSE_JBOSS_4).apply(browser);
+                return browser.findElement(RESPONSE_AREA).getAttribute("value").contains(UPDATE_AUCTION_RESPONSE_JBOSS_56)
+                        || browser.findElement(RESPONSE_AREA).getAttribute("value").contains(UPDATE_AUCTION_RESPONSE_JBOSS_4);
             }
         });
     }
@@ -184,8 +184,8 @@ public class WebServicesTest extends SeamGrapheneTest {
         waitForCidUpdate();
         waitCustom().withMessage("Response area should contain information about setting duration.").until(new Predicate() {
             public boolean apply(Object t) {
-                return element(RESPONSE_AREA).attribute("value").contains(SET_DURATION_RESPONSE_JBOSS_56).apply(browser)
-                        || element(RESPONSE_AREA).attribute("value").contains(SET_DURATION_RESPONSE_JBOSS_4).apply(browser);
+                return browser.findElement(RESPONSE_AREA).getAttribute("value").contains(SET_DURATION_RESPONSE_JBOSS_56)
+                        || browser.findElement(RESPONSE_AREA).getAttribute("value").contains(SET_DURATION_RESPONSE_JBOSS_4);
             }
         });
 
@@ -204,8 +204,8 @@ public class WebServicesTest extends SeamGrapheneTest {
         waitForCidUpdate();
         waitCustom().withMessage("Response area should contain information about setting starting price.").until(new Predicate() {
             public boolean apply(Object t) {
-                return element(RESPONSE_AREA).attribute("value").contains(SET_STARTING_PRICE_RESPONSE_JBOSS_56).apply(browser)
-                        || element(RESPONSE_AREA).attribute("value").contains(SET_STARTING_PRICE_RESPONSE_JBOSS_4).apply(browser);
+                return browser.findElement(RESPONSE_AREA).getAttribute("value").contains(SET_STARTING_PRICE_RESPONSE_JBOSS_56)
+                        || browser.findElement(RESPONSE_AREA).getAttribute("value").contains(SET_STARTING_PRICE_RESPONSE_JBOSS_4);
             }
         });
     }
@@ -220,7 +220,7 @@ public class WebServicesTest extends SeamGrapheneTest {
         clickAndWaitAjax(INVOKE_SERVICE_BUTTON);
         waitUntilValueNotEmpty(RESPONSE_AREA);
         waitForCidUpdate();
-        waitCustom().withMessage("Response area should contain auction details.").until(element(RESPONSE_AREA).attribute("value").contains(AUCTION_DETAILS_PRICE_RESPONSE));
+        waitCustom().withMessage("Response area should contain auction details.").until().element(RESPONSE_AREA).attribute("value").contains(AUCTION_DETAILS_PRICE_RESPONSE);
     }
 
     @Test
@@ -230,7 +230,7 @@ public class WebServicesTest extends SeamGrapheneTest {
         clickAndWaitForPage(LOGOUT_LINK_TEXT);
         clickAndWaitAjax(INVOKE_SERVICE_BUTTON);
 
-        waitCustom().withMessage("Response area should contain logout confirmation.").until(element(RESPONSE_AREA).attribute("value").contains(LOGOUT_RESPONSE));
+        waitCustom().withMessage("Response area should contain logout confirmation.").until().element(RESPONSE_AREA).attribute("value").contains(LOGOUT_RESPONSE);
     }
 
     @Test
@@ -241,8 +241,8 @@ public class WebServicesTest extends SeamGrapheneTest {
         confirmAuctionService();
         waitCustom().withMessage("Response area should contain information about confirmation.").until(new Predicate() {
             public boolean apply(Object t) {
-                return element(RESPONSE_AREA).attribute("value").contains(CONFIRMATION_RESPONSE_JBOSS_56).apply(browser)
-                        || element(RESPONSE_AREA).attribute("value").contains(CONFIRMATION_RESPONSE_JBOSS_4).apply(browser);
+                return browser.findElement(RESPONSE_AREA).getAttribute("value").contains(CONFIRMATION_RESPONSE_JBOSS_56)
+                        || browser.findElement(RESPONSE_AREA).getAttribute("value").contains(CONFIRMATION_RESPONSE_JBOSS_4);
             }
         });
     }
@@ -255,7 +255,7 @@ public class WebServicesTest extends SeamGrapheneTest {
         String password = "demo";
 
         open(contextPath.toString() + getProperty("HOME_PAGE"));
-        waitCustom().until(element(HERE_LINK).isPresent());
+        waitCustom().until().element(HERE_LINK).is().present();
         clickAndWaitHttp(HERE_LINK);
 
         clickAndWaitForPage(LOGIN_LINK_TEXT);
@@ -265,7 +265,7 @@ public class WebServicesTest extends SeamGrapheneTest {
 
         clickAndWaitAjax(INVOKE_SERVICE_BUTTON);
         waitForCidUpdate();
-        waitCustom().until(element(RESPONSE_AREA).attribute("value").contains(LOGIN_RIGHT_RESPONSE));
+        waitCustom().until().element(RESPONSE_AREA).attribute("value").contains(LOGIN_RIGHT_RESPONSE);
     }
 
     protected void confirmAuctionService() {
@@ -287,9 +287,9 @@ public class WebServicesTest extends SeamGrapheneTest {
     }
 
     protected void clickAndWaitForPage(String linkText) {
-        waitCustom().until(element(By.partialLinkText(linkText)).isPresent());
+        waitCustom().until().element(By.partialLinkText(linkText)).is().present();
         click(By.partialLinkText(linkText));
-        waitCustom().until(element(SELECTED_SERVICE).text().contains(linkText));
+        waitCustom().until().element(SELECTED_SERVICE).text().contains(linkText);
     }
 
     protected void waitForCidUpdate() {
@@ -302,7 +302,7 @@ public class WebServicesTest extends SeamGrapheneTest {
     }
 
     public WebDriverWait waitCustom() {
-        return new WebDriverWait<Void>(null, browser, WAIT_TIMEOUT);
+        return new WebDriverWaitImpl<Void>(null, browser, WAIT_TIMEOUT);
     }
 
     protected void waitUntilValueNotEmpty(final By by) {

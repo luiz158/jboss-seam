@@ -20,8 +20,6 @@ import org.jboss.seam.example.seamdiscs.model.Artist;
 import org.jboss.seam.example.seamdiscs.model.Disc;
 import org.jboss.seam.mock.DBJUnitSeamTest;
 import org.jboss.shrinkwrap.api.Archive;
-import org.jboss.shrinkwrap.api.spec.EnterpriseArchive;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 
@@ -110,7 +108,7 @@ public class EditDiscTest extends DBJUnitSeamTest{
             @Override
             protected void renderResponse() throws Exception 
             {
-                assert DISC4_NEW_DESCRIPTION.equals(getValue("#{disc.description"));
+                assert DISC4_NEW_DESCRIPTION.equals(getValue("#{disc.description}"));
                 assert DISC4_ARTIST.equals(getValue("#{disc.artist.name}"));
                 assert isLongRunningConversation();
             }

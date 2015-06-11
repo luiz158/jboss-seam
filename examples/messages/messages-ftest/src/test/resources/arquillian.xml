@@ -18,7 +18,7 @@
     </container>
 
     <extension qualifier="webdriver">
-        <property name="browserCapabilities">${browserCapabilities}</property>
+        <property name="browser">${browser}</property>
     </extension>
 
 </arquillian>

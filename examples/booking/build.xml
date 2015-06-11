@@ -10,6 +10,7 @@
 	<condition property="compatible.ant">
 		<or>
 	    	<contains string="${ant.version}" substring="1.8"/>
+         <contains string="${ant.version}" substring="1.9"/>
 		</or>
 	</condition>	
 	<fail unless="compatible.ant">You are using ${ant.version}. You must use Ant 1.8.0 or higher to build Seam examples.</fail>

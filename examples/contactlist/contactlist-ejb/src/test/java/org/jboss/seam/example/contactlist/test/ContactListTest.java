@@ -13,7 +13,6 @@ import org.jboss.seam.example.contactlist.Contact;
 import org.jboss.seam.framework.EntityHome;
 import org.jboss.seam.framework.EntityQuery;
 import org.jboss.shrinkwrap.api.Archive;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -97,7 +97,7 @@ public class UserTest extends SeamSpaceFunctionalTestBase {
         click(getBy(userRow + getProperty("USER_TABLE_DELETE")));
         browser.switchTo().alert().accept();
         browser.switchTo().window(windowHandle);
-        waitModel().until(element(getBy(userRow)).not().isPresent());
+        waitModel().until().element(getBy(userRow)).is().not().present();
         assertFalse("User " + username + " exists after deletion", isElementPresent(getBy(userRow)));
     }
 

@@ -14,24 +14,10 @@
     <name>Booking Example EE6 Functional Test</name>
 
     <properties>
-        <version.org.jboss.arquillian.extension.drone>1.2.0.Alpha2</version.org.jboss.arquillian.extension.drone>
+        
         <testDeployment>${basedir}/../jee6-web/target/jee6-web.war</testDeployment>
-        <browserCapabilities>firefox</browserCapabilities>
+        <browser>firefox</browser>
     </properties>
-    
-    <dependencyManagement>
-        <dependencies>
-            
-            <dependency>
-                <groupId>org.jboss.arquillian.extension</groupId>
-                <artifactId>arquillian-drone-bom</artifactId>
-                <version>${version.org.jboss.arquillian.extension.drone}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
     
     <dependencies>        
                 

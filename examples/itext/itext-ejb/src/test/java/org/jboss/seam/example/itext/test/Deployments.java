@@ -22,7 +22,7 @@ public static WebArchive itextDeployment() {
               .addAsWebInfResource("META-INF/ejb-jar.xml", "ejb-jar.xml")
               .addAsWebInfResource("persistence.xml", "classes/META-INF/persistence.xml")
               .addAsWebInfResource(new StringAsset("org.jboss.seam.mock.MockFacesContextFactory"), "classes/META-INF/services/javax.faces.context.FacesContextFactory")
-              .addAsWebInfResource("components.xml", "components.xml")
+              .addAsWebInfResource("components-test.xml", "components.xml")
               .addAsWebInfResource("jboss-deployment-structure.xml", "jboss-deployment-structure.xml")
               .addAsWebInfResource("seam.properties", "classes/seam.properties")
               .addAsWebInfResource("web.xml", "web.xml")

@@ -53,6 +53,7 @@ import java.util.TreeSet;
 
 import javassist.util.proxy.MethodFilter;
 import javassist.util.proxy.MethodHandler;
+import javassist.util.proxy.ProxyFactory;
 import javassist.util.proxy.ProxyObject;
 
 import javax.naming.NamingException;
@@ -107,7 +108,6 @@ import org.jboss.seam.log.Logging;
 import org.jboss.seam.util.Conversions;
 import org.jboss.seam.util.Conversions.PropertyValue;
 import org.jboss.seam.util.Naming;
-import org.jboss.seam.util.ProxyFactory;
 import org.jboss.seam.util.Reflections;
 import org.jboss.seam.util.SortItem;
 import org.jboss.seam.util.Sorter;

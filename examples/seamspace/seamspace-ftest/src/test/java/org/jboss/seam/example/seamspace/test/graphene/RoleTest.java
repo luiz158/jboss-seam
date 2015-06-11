@@ -108,7 +108,7 @@ public class RoleTest extends SeamSpaceFunctionalTestBase {
         assertTrue("Expected role deletion confirmation.", confirm.getText().contains(getProperty("ROLE_TABLE_DELETE_CONFIRMATION")));
         confirm.accept();
         sleep(2000);
-        waitModel().until(element(getBy(roleRow)).not().isPresent());
+        waitModel().until().element(getBy(roleRow)).is().not().present();
         assertFalse("Removed role still present.", isElementPresent(getBy(roleRow)));
     }
 

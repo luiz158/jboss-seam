@@ -67,13 +67,13 @@ public class UIHTMLUnitTest extends UIFunctionalTestBase  {
         ((JavascriptExecutor) browser).executeScript("document.getElementById(arguments[0]).value = arguments[1]", browser.findElement(FILE_UPLOAD_FILE).getAttribute("id"), IMAGE_TO_UPLOAD);
 
         Graphene.guardHttp(browser.findElement(FILE_UPLOAD_UPDATE)).click();
-        assertTrue("Page should contain \"Successfully updated\"", Graphene.element(FILE_UPLOAD_RESPONSE).isPresent().apply(browser));
+        assertTrue("Page should contain \"Successfully updated\"", browser.findElement(FILE_UPLOAD_RESPONSE).isDisplayed());
     }
 
     @Test
     @InSequence(2)
     public void graphicImageTest() throws IOException {
         Graphene.guardHttp(browser.findElement(GRAPHIC_IMAGE_LINK)).click();
-        assertTrue("Page should contain image of Pete Muir", Graphene.element(IMAGE).isPresent().apply(browser));
+        assertTrue("Page should contain image of Pete Muir", browser.findElement(IMAGE).isDisplayed());
     }
 }

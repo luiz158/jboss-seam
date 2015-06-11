@@ -11,11 +11,9 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.seam.contexts.Contexts;
 import org.jboss.seam.example.seambay.Auction;
 import org.jboss.seam.example.seambay.Category;
-import org.jboss.seam.mock.AbstractSeamTest.FacesRequest;
 import org.jboss.seam.mock.JUnitSeamTest;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.StringAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.Test;
@@ -55,7 +53,7 @@ public class AuctionTest extends JUnitSeamTest
 
                 // manually copied from Web module, modified
                 .addAsWebInfResource("web.xml") // only contains MockSeamListener definition
-                .addAsWebInfResource("components.xml") // corrected ejb component jndi-name references from java:app/jboss-seam to java:app/seam-blog
+                .addAsWebInfResource("components-test.xml", "components.xml") // corrected ejb component jndi-name references from java:app/jboss-seam to java:app/seam-blog
 
                 // manually copied from EAR module
                 .addAsWebInfResource("jboss-deployment-structure.xml")

@@ -5,7 +5,6 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 
 import java.io.File;
-import org.jboss.shrinkwrap.api.asset.StringAsset;
 
 public class Deployments {
    public static WebArchive seamSpaceDeployment() {
@@ -33,7 +32,7 @@ public class Deployments {
 
                 // manually copied from Web module, modified
                 .addAsWebInfResource("web.xml") // only contains MockSeamListener definition
-                .addAsWebInfResource("components.xml") // corrected ejb component jndi-name references from java:app/jboss-seam to java:app/seam-seampay
+                .addAsWebInfResource("components-test.xml", "components.xml") // corrected ejb component jndi-name references from java:app/jboss-seam to java:app/seam-seampay
 
                 // manually copied from EAR module
                 .addAsWebInfResource("jboss-deployment-structure.xml")
