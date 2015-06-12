@@ -73,6 +73,13 @@ public class EntityConverter implements
       {
          return null;
       }
+///* aqui coloquei isto.... - begin */
+//      try {
+//         Integer.parseInt(value);
+//      } catch (Throwable e) {
+//        return null;
+//      }
+///* aqui coloquei isto.... - end */
       return getEntityLoader().get(value);
    }
    
